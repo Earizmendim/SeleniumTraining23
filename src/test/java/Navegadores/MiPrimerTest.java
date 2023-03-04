@@ -25,7 +25,7 @@ public class MiPrimerTest
         driver.manage().window().maximize();
 
         //Enviamos la URL al navegador
-        driver.get("https://demo.guru99.com");
+        driver.get("https://demo.guru99.com/test/newtours/");
         driver.manage().deleteAllCookies();
         Thread.sleep(2000);
     }
