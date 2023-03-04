@@ -81,14 +81,33 @@ public class Locators
         userName.sendKeys("Automation");
         Thread.sleep(3000);*/
 
-        //******************** X P H A T S *******************
+        //******************** X P A T H S *******************
         //Existen dos tipos de xphats; que son: absoluto y relativo
-        //El xphat absoluto por buenas practicas NO se debe utilizar o bien no abusar de el
-        //El xphat absoluto es toda la ruta del elemento, es decir la ubicación del mismo y su sintaxis inicia con una diagonal
+        //El xpath absoluto por buenas practicas NO se debe utilizar o bien no abusar de el
+        //El xpath absoluto es toda la ruta del elemento, es decir la ubicación del mismo y su sintaxis inicia con una diagonal
 
-        //*******************
-        WebElement userName = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/input"));
+        //******************* Xpath Absoluto
+        /*WebElement userName = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/input"));
         userName.sendKeys("Locura");
+        Thread.sleep(3000);*/
+
+        //******************* Xpphat Relativo
+        // El uso de xpath relativo inicia con doble diagonal //
+        //El uso de xpath relativo se realiza por medio de los tags y atributos, entiendase que tags, son: span, img, input, etc..
+
+        //1. Un atributo
+        /*WebElement userName = driver.findElement(By.xpath("//input[@name='userName']"));
+        userName.sendKeys("REGISTRO");
+        Thread.sleep(3000);*/
+
+        //2. Dos atributos
+        /*WebElement demoSite = driver.findElement(By.xpath("//a[@title='Home' and @style='font-size:32px;']"));
+        demoSite.click();
+        Thread.sleep(3000);*/
+
+        //3. Uso de xpath usando contains, con: "*" o "tag", cabe mencionar que se puede utilizar uno u otro
+        WebElement demoSite = driver.findElement(By.xpath("//*[contains(text(), 'Demo Site')]"));
+        demoSite.click();
         Thread.sleep(3000);
     }
     @AfterTest
